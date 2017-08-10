@@ -1,0 +1,78 @@
+[08-Jul-2017 07:10:01 UTC] PHP Warning:  include_once(sqlconection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/blocks/addgalery.php on line 14
+[08-Jul-2017 07:10:01 UTC] PHP Stack trace:
+[08-Jul-2017 07:10:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:10:01 UTC] PHP Warning:  include_once(): Failed opening 'sqlconection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/blocks/addgalery.php on line 14
+[08-Jul-2017 07:10:01 UTC] PHP Stack trace:
+[08-Jul-2017 07:10:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:12:17 UTC] PHP Warning:  include_once(sqlconection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/blocks/addgalery.php on line 15
+[08-Jul-2017 07:12:17 UTC] PHP Stack trace:
+[08-Jul-2017 07:12:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:12:17 UTC] PHP Warning:  include_once(): Failed opening 'sqlconection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/blocks/addgalery.php on line 15
+[08-Jul-2017 07:12:17 UTC] PHP Stack trace:
+[08-Jul-2017 07:12:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:19:35 UTC] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 07:19:35 UTC] PHP Stack trace:
+[08-Jul-2017 07:19:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:19:35 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 07:19:35 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/blocks/addgalery.php on line 29
+[08-Jul-2017 07:19:35 UTC] PHP Stack trace:
+[08-Jul-2017 07:19:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:19:35 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/blocks/addgalery.php:29
+[08-Jul-2017 07:20:39 UTC] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 07:20:39 UTC] PHP Stack trace:
+[08-Jul-2017 07:20:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:20:39 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 07:20:39 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/blocks/addgalery.php on line 29
+[08-Jul-2017 07:20:39 UTC] PHP Stack trace:
+[08-Jul-2017 07:20:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:20:39 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/blocks/addgalery.php:29
+[08-Jul-2017 07:20:55 UTC] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 07:20:55 UTC] PHP Stack trace:
+[08-Jul-2017 07:20:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:20:55 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 07:20:55 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/blocks/addgalery.php on line 29
+[08-Jul-2017 07:20:55 UTC] PHP Stack trace:
+[08-Jul-2017 07:20:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:20:55 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/blocks/addgalery.php:29
+[08-Jul-2017 07:23:49 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 07:23:49 UTC] PHP Stack trace:
+[08-Jul-2017 07:23:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:23:49 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 07:23:49 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 07:23:49 UTC] PHP Stack trace:
+[08-Jul-2017 07:23:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:23:49 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 07:23:49 UTC] PHP Warning:  mysql_close(): no MySQL-Link resource supplied in /home/ubuntu/workspace/blocks/addgalery.php on line 29
+[08-Jul-2017 07:23:49 UTC] PHP Stack trace:
+[08-Jul-2017 07:23:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 07:23:49 UTC] PHP   2. mysql_close() /home/ubuntu/workspace/blocks/addgalery.php:29
+[08-Jul-2017 17:21:32 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 17:21:32 UTC] PHP Stack trace:
+[08-Jul-2017 17:21:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 17:21:32 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 17:21:32 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 17:21:32 UTC] PHP Stack trace:
+[08-Jul-2017 17:21:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 17:21:32 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 17:21:32 UTC] PHP Warning:  mysql_close(): no MySQL-Link resource supplied in /home/ubuntu/workspace/blocks/addgalery.php on line 29
+[08-Jul-2017 17:21:32 UTC] PHP Stack trace:
+[08-Jul-2017 17:21:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 17:21:32 UTC] PHP   2. mysql_close() /home/ubuntu/workspace/blocks/addgalery.php:29
+[08-Jul-2017 18:38:31 UTC] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 18:38:31 UTC] PHP Stack trace:
+[08-Jul-2017 18:38:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 18:38:31 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 18:38:31 UTC] PHP Warning:  mysql_query(): A link to the server could not be established in /home/ubuntu/workspace/blocks/addgalery.php on line 28
+[08-Jul-2017 18:38:31 UTC] PHP Stack trace:
+[08-Jul-2017 18:38:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 18:38:31 UTC] PHP   2. mysql_query() /home/ubuntu/workspace/blocks/addgalery.php:28
+[08-Jul-2017 18:38:31 UTC] PHP Warning:  mysql_close(): no MySQL-Link resource supplied in /home/ubuntu/workspace/blocks/addgalery.php on line 29
+[08-Jul-2017 18:38:31 UTC] PHP Stack trace:
+[08-Jul-2017 18:38:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[08-Jul-2017 18:38:31 UTC] PHP   2. mysql_close() /home/ubuntu/workspace/blocks/addgalery.php:29
+[10-Aug-2017 07:01:08 UTC] PHP Fatal error:  Call to undefined function str() in /home/ubuntu/workspace/blocks/addgalery.php on line 5
+[10-Aug-2017 07:01:08 UTC] PHP Stack trace:
+[10-Aug-2017 07:01:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[10-Aug-2017 07:01:15 UTC] PHP Fatal error:  Call to undefined function str() in /home/ubuntu/workspace/blocks/addgalery.php on line 5
+[10-Aug-2017 07:01:15 UTC] PHP Stack trace:
+[10-Aug-2017 07:01:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0

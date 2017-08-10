@@ -48,3 +48,11 @@
 ?>
 </body>
 </html>
+
+mysql_query("
+            INSERT INTO galeries(title_g, logo_image, description_g, author_g, dmeta_g, date_g)
+            VALUES($galery_title, $way_logo, $descrip, $author, $meta, $data)
+            ");
+            
+
+mysql_close();
