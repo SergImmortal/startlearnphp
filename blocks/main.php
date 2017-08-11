@@ -8,22 +8,25 @@
         ?>    
             
          <div id="results"></div><div>
-         
-         <?php
-         $query = "SELECT * FROM images WHERE title_g = '23'";
-         $result = mysqli_query($db, $query) or die("Error" . mysqli_error($db));
 
-         $data = array();
-         while($row = mysqli_fetch_assoc($result)){
-             $data[] = $row;
-         };
-        
-            foreach ($data as $value){
-                echo '<img style = "widht = 200px;" src ='.$value["way_to_image"].'>';
-
-            };         
-         ?>
-         
+        <form method = "POST" action = "vive.php">
+        <p> Відобразити </p>
+        <select name = 'selector'>
+        <?php
+            $query = "SELECT title_g FROM galeries";
+            $result = mysqli_query($db, $query) or die("Error" . mysqli_error($db));
+            $data = array();
+            while($row = mysqli_fetch_assoc($result)){
+                $data[] = $row;
+                };
+                foreach ($data as $value){
+                echo "<option>". $value['title_g'] ."</option>";
+                }
+        ?>
+        </select>
+        <br>
+        <button>ENTER</button>    
+        </form>
          </div>
         <div id = "selectgaleryroom"></div>
     </div>
