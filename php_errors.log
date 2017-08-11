@@ -76,3 +76,19 @@
 [10-Aug-2017 07:01:15 UTC] PHP Fatal error:  Call to undefined function str() in /home/ubuntu/workspace/blocks/addgalery.php on line 5
 [10-Aug-2017 07:01:15 UTC] PHP Stack trace:
 [10-Aug-2017 07:01:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/blocks/addgalery.php:0
+[11-Aug-2017 11:28:00 UTC] PHP Warning:  require_once(blocks/head.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/adminmain.php on line 6
+[11-Aug-2017 11:28:00 UTC] PHP Stack trace:
+[11-Aug-2017 11:28:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/adminmain.php:0
+[11-Aug-2017 11:28:00 UTC] PHP Fatal error:  require_once(): Failed opening required 'blocks/head.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/adminmain.php on line 6
+[11-Aug-2017 11:28:00 UTC] PHP Stack trace:
+[11-Aug-2017 11:28:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/adminmain.php:0
+[11-Aug-2017 11:29:06 UTC] PHP Warning:  require_once(blocks/head.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/admin/adminmain.php on line 6
+[11-Aug-2017 11:29:06 UTC] PHP Stack trace:
+[11-Aug-2017 11:29:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/adminmain.php:0
+[11-Aug-2017 11:29:06 UTC] PHP Fatal error:  require_once(): Failed opening required 'blocks/head.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/admin/adminmain.php on line 6
+[11-Aug-2017 11:29:06 UTC] PHP Stack trace:
+[11-Aug-2017 11:29:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/adminmain.php:0
+[11-Aug-2017 11:42:25 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/ubuntu/workspace/admin/adminmain.php on line 16
+[11-Aug-2017 12:15:23 UTC] PHP Notice:  Undefined index: galery in /home/ubuntu/workspace/admin/addimm.php on line 10
+[11-Aug-2017 12:15:23 UTC] PHP Stack trace:
+[11-Aug-2017 12:15:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/admin/addimm.php:0

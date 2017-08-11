@@ -2,8 +2,6 @@
         <div id = "galery">
             
         <?php 
-        include_once "blocks/addgalery.php";
-        include_once "blocks/addimage.php";
         include_once "sqlconection.php";
         ?>    
             

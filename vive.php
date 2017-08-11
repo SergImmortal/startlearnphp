@@ -22,9 +22,8 @@ $query = "SELECT * FROM images WHERE title_g = '$id'";
          };
         
             foreach ($data as $value){
-                echo '<img style = "widht = 200px;" src ='.$value["way_to_image"].'>';
+                echo '<img style = "height: 200px;" src ='.$value["way_to_image"].'>';
             };
-
 ?>
 </div>
 </body>

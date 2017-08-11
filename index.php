@@ -1,18 +1,12 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    <?php 
-    $title = "Portfolio";
-    require_once "blocks/head.php";
-    ?>
-</head>
-
-<body id = headlogin>
-        <?php require_once "blocks/header.php" ?>
-        <?php require_once "blocks/main.php" ?>
-        <?php require_once "blocks/footer.php" ?>
-</body>
+<?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
 
-</html>
+include ('sqlconection.php'); //подключаемся к БД
+
+
+include ('blocks/index.html'); //подключаем файл с формой
+
+?>

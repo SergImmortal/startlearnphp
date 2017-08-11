@@ -162,3 +162,11 @@ div{
 img {
     height: 300px;
 }
+
+select {
+    width: 200px;
+}
+
+input {
+    width: 200px;
+}
