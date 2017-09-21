@@ -11,6 +11,7 @@ function CreateLoginWindow(){
     hidebutton.className = 'remove';
     
     
+    
     loginfield.setAttribute("placeholder", "LOGIN");
     loginfield.setAttribute("class", "input");
     passwordfield.setAttribute("placeholder", "PASSWORD");

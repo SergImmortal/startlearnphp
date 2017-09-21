@@ -1,9 +1,9 @@
 <div class = 'photo_administration'>
 <span> Додати фотографію </span>
-<form method = "POST" action = "addimm.php">
+<form method = "POST" action = "addimm.php" enctype = "multipart/form-data">
     <table>
     <tr><td><span>Назва фото:</span></td><td><input type="text" name="imm_title" placeholder = "imm_title"/></td></tr>
-    <tr><td><span>Шлях до фото:</span></td><td> <input type="text" name="way_imm" placeholder = "way_imm"/></tr>
+    <tr><td><span>фото:</span></td><td> <input type="file" name="way_imm" placeholder = "way_imm" /></tr>
     <tr><td><span>Галерея:</span></td><td> <select name = 'galery'>
         <?php
 
