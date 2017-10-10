@@ -1,21 +1,29 @@
 <?php
 
+define("WWW", __DIR__);
+define("CORE", __DIR__  . '/vendor/core');
+define("APP", __DIR__ . '/app');
 
  
 $query = rtrim($_SERVER['QUERY_STRING'], '/');
 require '/home/ubuntu/workspace/vendor/core/Router.php';
 require '/home/ubuntu/workspace/vendor/libs/functions.php';
+//require '/home/ubuntu/workspace/app/controllers/Home.php';
+//require '/home/ubuntu/workspace/app/controllers/TestOne.php';
 
-Router::add('post/add', ['controller' => 'Post', 'action' => 'add']);
-Router::add('post', ['controller' => 'Post', 'action' => 'index']);
-Router::add('', ['controller' => 'Main', 'action' => 'index']);
-//printArray(Router::getRoutes());
+spl_autoload_register(function($class){
+    $file = APP . "/controllers/$class.php";
+    if (is_file($file)){
+        require_once $file;
+    }
+});
 
 
-if(Router::matchRoute($query)){
-    printArray(Router::getRoute());
-}else{
-    echo '404';
-};
+Router::add('^$', ['controller' => 'Home', 'action' => 'index']);
+Router::add('(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?');
+
+
+Router::dispetch($query);
+
 
 ?>
