@@ -1,12 +1,3 @@
 <?php
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-
-
-include ('sqlconection.php'); //подключаемся к БД
-
-
-include ('blocks/index.html'); //подключаем файл с формой
-
+ echo __FILE__;
 ?>
