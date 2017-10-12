@@ -1,10 +1,10 @@
 <?php
 
-    $servername = '127.0.0.1';
-    $username = 'maksis';
+    $servername = '';
+    $username = '';
     $password = "";
-    $database = "c9";
-    $dbport = 3306;
+    $database = "";
+    $dbport = ;
 
     // Create connection
     $db = mysqli_connect($servername, $username, $password, $database, $dbport);
