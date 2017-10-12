@@ -61,6 +61,10 @@ class Router {
         };
     }
     
+    public static function authorisation(){
+        
+    }
+    
     // методы форматирования переменных
     protected static function upperCamelCase($name){
         return $name = str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));

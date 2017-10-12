@@ -13,6 +13,7 @@ require '/home/ubuntu/workspace/vendor/core/Router.php';
 require '/home/ubuntu/workspace/vendor/libs/functions.php';
 require CORE.'/base/baseController.php';
 require CORE.'/base/View.php';
+require CORE.'/Db.php';
 
 // Автоподключение файлов контроллеров
 spl_autoload_register(function($class){
@@ -24,11 +25,24 @@ spl_autoload_register(function($class){
 
 // Правила роутера (прописываются допустимые пути и присваиваются переменные получаемые из query_string)
 Router::add('^$', ['controller' => 'Home', 'action' => 'index']);
+Router::add('^authorisation$', ['controller' => 'Admin', 'action' => 'authorisation']);
+Router::add('^authorisation/(?P<action>[a-z0-9-]+)$', ['controller'=>'Admin']);
 Router::add('^home$', ['controller' => 'Home', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z0-9-]+)/?(?P<action>[a-z0-9-]+)$');
 Router::add('^get/(?P<action>[a-z0-9-]+)/?(?P<alias>[a-z0-9-]+)$', ['controller'=>'Get']);
 
-// Запуск сонтроллера согласно запросу
+// Запуск контроллера согласно запросу
+SimpleDB::add('127.0.0.1', 'maksis', '', 'c9', 3306);
 Router::dispetch($query);
 
+
+
+//DEBUG
+
+
+
+/*
+'pozhdemon'
+'Canada1994'
+*/
 ?>
