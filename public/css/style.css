@@ -1,0 +1,83 @@
+/*admin interface style*/
+#mainBlock{
+    width: 100%;
+}
+
+.admindiv{
+/*background: gray;*/
+display: block;
+float: left;
+}
+
+#sideBar{
+    background-color: skyblue;
+    height: 100vh;
+    width: 18%;
+}
+
+#firstList{
+    height: 100vh;
+    background-color: lavender;
+    width: 27%;
+}
+
+#secondList{
+    background-color: #eae7e7;
+    width: 55%;
+}
+
+.adminsidebarelem{
+    
+    display: block;
+    position: relative;
+    height: 50px;
+    text-align: center;
+    font-size: x-large;
+    padding-top: 10%;
+/*    border: 1px solid black;*/
+}
+
+.adminsidebarelem:hover{
+    color: blue;
+    cursor: pointer;
+    transition:all 0.5s ease-out 0.25s;
+        -moz-transition:all  0.5s ease-out 0.25s;
+        -webkit-transition:all  0.5s ease-out 0.25s;
+        -o-transition:all  0.5s ease-out 0.25s;
+}
+
+.toolelem, .galeryElem{
+        display: block;
+    position: relative;
+    height: 50px;
+    text-align: center;
+    font-size: larger;
+    padding-top: 10%;
+}
+
+.toolelem:hover, .galeryElem:hover{
+    color: blue;
+    cursor: pointer;
+    transition:all 0.5s ease-out 0.25s;
+        -moz-transition:all  0.5s ease-out 0.25s;
+        -webkit-transition:all  0.5s ease-out 0.25s;
+        -o-transition:all  0.5s ease-out 0.25s;    
+}
+
+.gallogo{
+    width: 200px;
+}
+
+.imglogo{
+    float: left;
+    width: 200px;
+}
+
+.admingaleryview {
+    background: gainsboro;
+}
+
+.adminimagwview{
+    
+    background: whitesmoke;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+    <meta http-equiv=\"refresh\" content=\"0;url='https://startlearnphp-maksis.c9users.io'\">
+    <meta charset = "utf-8">
+    <title><?php 
+    if(isset($pageName)){ 
+        echo "Portfolio - " . $pageName;
+    }else{
+        echo "Portfolio - Natasha Pozhdema";
+    }
+    ?></title>
+    
+    <meta name="description" 
+    <?php 
+    if(isset($pageMeta)){ 
+        echo "content= '{$pageMeta}'";
+    }else{
+        echo "content= 'Замовити фотосесію в Києві'";
+    }
+    ?>
+    content="Фотосессии Киев" />
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <script
+	src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/public/js/lib.js"></script>
+	
+</head>
+
+
+<body class = 'main' id = 'body'>
+    <?php 
+       
+        $file_way = APP . "/views/{$way}.php";
+        if(is_file($file_way)){
+                require $file_way;
+            }else{
+                http_response_code(404);
+                include WWW.'/public/404.html';
+         }
+     header('Referer: http://wwbb.pythonanywhere.com/');
+    ?>
+</body>
+
+
+</html>
