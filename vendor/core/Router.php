@@ -48,23 +48,22 @@ class Router {
                 $action = self::$route['action'];
                 if(method_exists($controllerObject, $action)){
                     $controllerObject->$action();
-                    $controllerObject->getView();
+//                    $controllerObject->getView();
                 }else{
-                    echo "<br>У контроллера <b> $controller </b> отсутствует метод <b> $action </b>";
+//                    echo "<br>У контроллера <b> $controller </b> отсутствует метод <b> $action </b>";
+                      http_response_code(404);
+                      include ER404;
                 }
             }else{
-                echo "Контроллер <b> $controller </b> не найден";
+//                echo "Контроллер <b> $controller </b> не найден";
+                http_response_code(404);
+                include ER404;
             }
         }else{
            http_response_code(404);
-           include '/home/ubuntu/workspace/public/404.html';
+           include ER404;
         };
     }
-    
-    public static function authorisation(){
-        
-    }
-    
     // методы форматирования переменных
     protected static function upperCamelCase($name){
         return $name = str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));

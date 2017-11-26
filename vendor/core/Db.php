@@ -7,7 +7,13 @@ class SimpleDB {
     protected static $password;
     protected static $database;
     protected static $dbport;
+    private $table;
     static $db;
+     
+    public function __construct($table_name){
+        $this->table = $table_name;
+        
+    }
     
     public static function add($servername, $username, $password, $database, $dbport) {
         self::$servername = $servername;
@@ -28,9 +34,9 @@ class SimpleDB {
         }
     }
     // выбрать данные
-    public function select($obj, $table, $otherParam = ''){
+    public function select($obj, $otherParam = ''){
         self::connect();
-        $query = "SELECT {$obj} FROM {$table} {$otherParam}";
+        $query = "SELECT {$obj} FROM {$this->table} {$otherParam}";
         $result = mysqli_query(self::$db, $query) or die("Error" . mysqli_error($db));
         $data = array();
         while($row = mysqli_fetch_assoc($result)){
@@ -40,9 +46,9 @@ class SimpleDB {
         return $data;
     }
     // вставить данные
-    public function insert($tabl, $row, $value){
+    public function insert($row, $value){
         self::connect();
-        $query = "INSERT INTO {$tabl}($row) VALUES({$value})";
+        $query = "INSERT INTO {$this->table}($row) VALUES({$value})";
         $result = mysqli_query(self::$db, $query) or die("Error" . mysqli_error($db));
         mysqli_close(self::$db);
         if($result){
@@ -53,9 +59,9 @@ class SimpleDB {
         return $data;
     }
     // удалить данные
-    public function del($tabl, $where){
+    public function del($where){
         self::connect();
-        $query = "DELETE FROM {$tabl} {$where}";
+        $query = "DELETE FROM {$this->table} {$where}";
         $result = mysqli_query(self::$db, $query) or die("Error" . mysqli_error($db));
         mysqli_close(self::$db);
         if($result){
@@ -66,9 +72,9 @@ class SimpleDB {
         return $data;
     }
     //обновить данные
-    public function update($tabl, $value, $where){
+    public function update($value, $where){
         self::connect();
-        echo $query = "UPDATE {$tabl} SET {$value} WHERE {$where}";
+        echo $query = "UPDATE {$this->table} SET {$value} WHERE {$where}";
         $result = mysqli_query(self::$db, $query) or die("Error" . mysqli_error($db));
         mysqli_close(self::$db);
         if($result){
@@ -79,5 +85,5 @@ class SimpleDB {
         return $data;
     }
 }
-//UPDATE core_config_data SET value = 'Ваше значение' WHERE config_id = '81'
+
 ?>

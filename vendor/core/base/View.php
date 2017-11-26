@@ -4,24 +4,30 @@ class Views{
     public $route = [];
     public $view;
     public $layout = [];
+    public $loadTempl;
     
     
-    public function __construct($route, $view = ''){
+    public function __construct($route, $view = '', $loadTempl){
         $this->route = $route;
         $this->view = $view;
+        $this->loadTempl = $loadTempl;
         
     }
     
     public function render($vars){
+        $vars['way'] = $this->view;
          if(is_array($vars)){
              extract($vars);
          }
-         $file_way = APP . "/views/{$this->view}.php";
-         if(is_file($file_way)){
-             require $file_way;
-         }else{
-             echo 'Шаблон не найден';
+         if ($this->loadTempl == true){;
+            $indexFile = WWW."/public/index.html";
+            if(is_file($indexFile)){
+                require $indexFile;
+            }else{
+                echo 'Шаблон не найден';
+         } 
          }
+
     }
 };
 

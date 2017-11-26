@@ -1,7 +1,11 @@
-<?php
 
+
+<?php
+session_start();
 error_reporting(-1);
 // Глобальные переменные
+define("MYURL", 'https://startlearnphp-maksis.c9users.io');
+define("ER404", __DIR__  . '/public/404.html');
 define("WWW", __DIR__);
 define("CORE", __DIR__  . '/vendor/core');
 define("APP", __DIR__ . '/app');
@@ -34,15 +38,4 @@ Router::add('^get/(?P<action>[a-z0-9-]+)/?(?P<alias>[a-z0-9-]+)$', ['controller'
 // Запуск контроллера согласно запросу
 SimpleDB::add('127.0.0.1', 'maksis', '', 'c9', 3306);
 Router::dispetch($query);
-
-
-
-//DEBUG
-
-
-
-/*
-'pozhdemon'
-'Canada1994'
-*/
 ?>
