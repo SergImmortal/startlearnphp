@@ -99,9 +99,15 @@ class Admin extends  Controller{
             $this->ajaxResponse($response);  
         };
         $db = new SimpleDB('galleries');
-        $row = "galleryTitle, galleryLogoImage, galleryDescription, galleryAuthor, galleryMetaTag, galleryCreatedTime"; 
-        $value = "'$galery_title', '$way_logo', '$descrip', '$author', '$meta', '$date'" ;
-        $status = $db->insert($row, $value);
+        $array = [
+            'galleryTitle' => $galery_title,
+            'galleryLogoImage' => $way_logo,
+            'galleryDescription' => $descrip,
+            'galleryAuthor' => $author,
+            'galleryMetaTag' => $meta,
+            'galleryCreatedTime' => $date
+            ];
+        $status = $db->insert($array);
         $response = ['response' => $status.' Галерею створено!!!'];
         $this->ajaxResponse($response);
         };

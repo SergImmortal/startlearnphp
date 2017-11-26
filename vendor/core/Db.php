@@ -46,10 +46,18 @@ class SimpleDB {
         return $data;
     }
     // вставить данные
-    public function insert($row, $value){
+    public function insert($array){
+        $row = [];
+        $value = [];
+        foreach ($array as $key=>$val) {
+            array_push($row, $key);
+            array_push($value, "'".$val."'");
+            }
+        $row1 = join(', ', $row);
+        $value1 = join(', ', $value);
         self::connect();
-        $query = "INSERT INTO {$this->table}($row) VALUES({$value})";
-        $result = mysqli_query(self::$db, $query) or die("Error" . mysqli_error($db));
+        $query = "INSERT INTO {$this->table}({$row1}) VALUES({$value1})";
+        $result = mysqli_query(self::$db, $query) or die("Error" . mysqli_error($db) .'  '. $query);
         mysqli_close(self::$db);
         if($result){
             $data = 'data inserted';
