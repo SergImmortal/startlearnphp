@@ -160,37 +160,57 @@ $(document).ready(function(){
             div.innerHTML = context;
             parent.appendChild(div);
         }else if(data == 'add-image'){
+            //аякс
+            var select = '<select id = "targetGalleryTitle" name = "targetGalleryTitle">';
+            
+            ajaxRequestPost('/admin/gallery', ' ', function(data){
+                for(var i in data){
+                    select = select + '<option>' + data[i]['galleryTitle'] + '</option>';
+                };
+            select = select + '</select>';
             Clean(parent);            
             var div = document.createElement('div');
             div.className = 'image_administration'
             context = '\
-                    <span> image_administration </span>\
-                    <div class = "">\
+                    <span> Завантажити зображення </span>\
+                    <form action = "add" method="post" id="my_form_imm" enctype="multipart/form-data">\
                         <table>\
-                        <tr><td><span class = "name">Назва: </span></td><td><input type="text" id="galery_title" placeholder = "galery_title"/></td></tr>\
-                        <tr><td><span class = "name">Логотип:</span></td><td><input type="file" id="file_path" placeholder = "file_path"/></td></tr>\
-                        <tr><td><span class = "name">Автор:</span></td><td><input type="text" id="author" placeholder = "author"/></td></tr>\
-                        <tr><td><span class = "name">Опис: </span></td><td><input type="text" id="descrip" placeholder = "descrip"/></td></tr>\
-                        <tr><td><span class = "name">Метатеги:</span></td><td><input type="text" id="meta" placeholder = "meta"/></td></tr>\
+                        <tr><td><span class = "name">Назва: </span></td><td><input type="text" id="imageTitle" name = "imageTitle" placeholder = "galery_title"/></td></tr>\
+                        <tr><td><span class = "name">Логотип:</span></td><td><input type="file" id="file" name = "file" placeholder = "file_path"/></td></tr>\
+                        <tr><td><span class = "name">Автор:</span></td><td><input type="text" id="imageAuthor" name = "imageAuthor" placeholder = "author"/></td></tr>\
+                        <tr><td><span class = "name">Галерея:</span></td><td>'+ select +'</td></tr>\
+                        <tr><td><span class = "name">Опис: </span></td><td><input type="text" id="imageDescription" name = "imageDescription" placeholder = "descrip"/></td></tr>\
+                        <tr><td><span class = "name">Метатеги:</span></td><td><input type="text" id="imageMetaTag" name = "imageMetaTag" placeholder = "meta"/></td></tr>\
                         </table>\
-                        <button id = "add_data">ADD</button>\
-                    </div>\
+                        <input type="submit" id="submit2" value="ADD">\
+                    </form>\
             '
             div.innerHTML = context;
             parent.appendChild(div);
-        }
+        
+            })
+            }
         })
 
 
     $(document).on('submit', function(e){
         e.preventDefault();
-        var form = $('#my_form')[0]
-        var formData = new FormData(form);
-
-        ajaxRequestUpload('/admin/add-gallery', formData, function(data){
-            console.log(data)
-            $('#my_form')[0].reset();
+        if($('#my_form')[0]){
+            var form = $('#my_form')[0]
+            var formData = new FormData(form);
+            ajaxRequestUpload('/admin/add-gallery', formData, function(data){
+                console.log(data)
+                $('#my_form')[0].reset();
+        })            
+        } else if($('#my_form_imm')[0]){
+            var form = $('#my_form_imm')[0]
+            var formData = new FormData(form);
+            ajaxRequestUpload('/admin/add-image', formData, function(data){
+                console.log(data)
+                $('#my_form_imm')[0].reset();
         })
+        };
+
     });
 
 });

@@ -4,7 +4,8 @@
  //   printArray($context);
     
     foreach ($context as $value) {
-        $alias = 'https://startlearnphp-maksis.c9users.io/get/gallery/'.$value['galleryTitle'];
+        $test = str_replace(' ', '-', $value['galleryTitle']);
+        $alias = 'https://startlearnphp-maksis.c9users.io/get/gallery/'. $test;
         $src = substr($value['galleryLogoImage'], 22);
         echo ("<a href = {$alias}><div style = 'text-align: center; float: left;' >
             <p style = 'text-align: center;' ><b>{$value['galleryTitle']}</b></p>
@@ -12,5 +13,9 @@
             </div></a>"
         );
     }
+
+$s = 'ff sss dd ff';
+$d_f = str_replace(' ', '-', $s);
+echo($d_f);
 
 ?>

@@ -61,7 +61,7 @@ class Router {
             }
         }else{
            http_response_code(404);
-           include ER404;
+           include WWW.'/public/404.html';
         };
     }
     // методы форматирования переменных

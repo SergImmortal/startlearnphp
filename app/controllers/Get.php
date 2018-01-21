@@ -5,7 +5,7 @@ class Get extends  Controller{
 
     public function galleryAction(){
         // What we want do...
-        $alias = $this->route['alias'];
+        $alias = str_replace('-', ' ', $this->route['alias']);
         $valDb = new SimpleDB('galleries');
         $createdGallery = $valDb->select('galleryTitle');
         $metaTag = $valDb->select('galleryMetaTag', "WHERE galleryTitle = '{$alias}'" );

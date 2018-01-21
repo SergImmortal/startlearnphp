@@ -64,8 +64,64 @@ class Admin extends  Controller{
         $this->ajaxResponse($response);
     }
     public function addImageAction(){
+        // Получаем данные формы
+        $image_title = strip_tags(trim($_POST['imageTitle']));
+        $author = strip_tags(trim($_POST['imageAuthor']));
+        $galery = strip_tags(trim($_POST['targetGalleryTitle']));
+        $descrip = strip_tags(trim($_POST['imageDescription']));
+        $meta = strip_tags(trim($_POST['imageMetaTag']));
+        $date = date("Y-m-d H:i:s");
+        //обрабатываем полученный файл
+        $g_folder = str_replace(' ', '_', $galary);
+        $file_path = $_FILES['file']['tmp_name'];
+        
+        $fi = finfo_open(FILEINFO_MIME_TYPE);
+        $mime = (string) finfo_file($fi, $file_path);
+        if (strpos($mime, 'image') === false){
+            $response = ['response' => 'Upload file error 1'];
+            $this->ajaxResponse($response);            
+        }else{
+        $image = getimagesize($file_path);
+        $name = md5_file($file_path);
+        $extension = image_type_to_extension($image[2]);
+        $format = str_replace('jpeg', 'jpg', $extension);
+        
+        $way_logo = '/home/ubuntu/workspace/img/photo/'.$g_folder.'/'.$name.$format;
+        // create dir to sawe image
+        $path_to_dir = '/home/ubuntu/workspace/img/photo/'.$g_folder;
+        if (is_dir($path_to_dir)) {
+            if(!move_uploaded_file($file_path, $way_logo)){
+                $response = ['response' => 'Upload file error 2'];
+                $this->ajaxResponse($response);  
+            };
+        } else {
+                if (!mkdir($path_to_dir, 0755, true)) {
+                    $response = ['response' => 'Upload file error 3'];
+                    $this->ajaxResponse($response);
+               }else{
+                    if(!move_uploaded_file($file_path, $way_logo)){
+                        $response = ['response' => ' Upload file error 4'];
+                        $this->ajaxResponse($response);  
+                    };                   
+               }
+        };
+        $db = new SimpleDB('images');
+        $array = [
+            'imageTitle' => $image_title,
+            'wayToImage' => $way_logo,
+            'targetGalleryTitle' => $galery,
+            'imageDescription' => $descrip,
+            'imageAuthor' => $author,
+            'imageMetaTag' => $meta,
+            'imageCreatedDate' => $date
+            ];
+        $status = $db->insert($array);
+        $response = ['response' => $g_folder.' Зображення додано!!!'];
+        $this->ajaxResponse($response);
+        }
         
     }
+    
     public function updateImageAction(){
         
     }    
